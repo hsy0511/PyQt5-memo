@@ -36,7 +36,7 @@ from PyQt5 import uic
 // ui파일을 클래스 파일로 사용할 수 있게 해주는 라이브러를 uic도 가져온다.
 
 
-form_class = uic.loadUiType("C:\\Users\\MOA\\Desktop\\QtDesigner\\파이큐티\\파이큐티 두번째 - 메모장\\layout.ui")[0]
+form_class = uic.loadUiType("C:\\Users\\MOA\\Desktop\\QtDesigner\\파이큐티\\파이큐티 두번째 - 메모장\\memo.ui")[0]
 // ui 파일 경로를 가져와서 uic.loadUiType 함수에 넣게 되면 ui파일을 클래스 파일로 사용할 수 있게된다.
 class WindowClass(QMainWindow, form_class):
     def __init__(self):
