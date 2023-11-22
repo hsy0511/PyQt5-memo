@@ -1,5 +1,8 @@
 # PyQt5-memo
 # PyQt5를 사용하여 윈도우 프로그램 메모장 만들기
+출처 : 재즐보프[유튜브] 
+링크 : https://www.youtube.com/playlist?list=PLnIaYcDMsScwsKo1rQ18cLHvBdjou-kb5
+
 ## 만드는 절차
 - 레이아웃
 - 메뉴바
