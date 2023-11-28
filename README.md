@@ -57,6 +57,23 @@ app.exec_()
 ```
 ### 2. PyQt5 메모장 - 메뉴바 만들기
 - QT 디자이너
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/167f672b-0e13-4433-9091-7b1c0e982891)
+
+이전에 만들었던 폼에서 "여기에 입력하십시오"라는 문구가 적힌 곳에 메뉴를 입력한다.
+
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/faea95a6-c25f-4684-8a19-9eb63c08c0cc)
+
+그리고 파일을 누르면 똑같이 "여기에 입력하십시오"라는 문구가 적힌 곳이 있는데 그곳에는 기능들을 입력하는 곳이다.
+
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/4c32e2f3-ae64-45cc-9d26-71dccf5ec294)
+
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/7a348af9-2728-4ca2-925f-b86bcce2e164)
+
+오른 쪽 목록에서 shortcut 속성을 이용해서 메뉴바에 기능의 단축키를 넣을 수 있다.
+
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/28b79b1b-6470-4ca9-9718-18925a5d9013)
+
+
 
 - 파이썬 
 ### 3. PyQt5 메모장 - 열기, 저장 기능 만들기 
