@@ -3,92 +3,57 @@
 출처 : 재즐보프[유튜브] 
 링크 : https://www.youtube.com/playlist?list=PLnIaYcDMsScwsKo1rQ18cLHvBdjou-kb5
 
-## 만드는 절차
-- 레이아웃
-- 메뉴바
-- 열기, 저장 기능
-- 다른 이름으로 저장
-- 클로즈 이벤트
-- 메시지 박스 띄우기
-### 1. PyQt5 메모장 - 레이아웃 만들기 
-- QT 디자이너
-QT 디자이너에서 Main Window 폼을 생성한다.
+## 메모장 파일 저장하기
+### 실행화면
 
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/01ceb015-6b17-4f56-86bc-654b513bf7d7)
+### PyQt 
+1. 레이아웃 만들기
+- Qt Designer에서 Plain Text Edit를 삽입한다.
 
-여기에 Layout에 있는 Grid Layout를 생성한다.
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/a53baa5f-3e70-4ae9-ab60-46a5c261ef32)
 
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/774a76db-d652-4e8f-99c8-fa3636a4ef6d)
+- MainWindow를 경자형으로 배치하여 Plain Text Edit를 화면에 맞게 맞춘다. 
 
-그리고 centralwidget을 클릭 후 격자형 배치로 바꾸고 Layout에 margin의 크기를 전부 0으로 맞춰준다.
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/de99f3ae-5cf8-4e6f-bca2-8794a46c5ef2)
 
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/4f158248-cb81-4ff5-8e28-c20f7baf294c)
+- centralwidget의 margin을 0으로 맞추어 화면이 꽉차도록 한다.
 
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/b9c6c642-1a3a-4c47-90cc-97c3d7905641)
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/20c01bfe-929f-44af-97e1-fe58946e897c)
 
-마지막으로 Input Widgets에 있는 Plain Box를 배치하면 레이아웃이 완성된다.
+2. 메뉴바 만들기
 
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/1400a01c-82d2-4e4a-a5fd-7fedbd233f8d)
+- 화면 위에있는 "여기에 입력하십시오."라는 문구가 써져있는 곳을 더블 클릭하여 메뉴를 삽입한다.
 
-- 파이썬
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/0529dc27-9538-47f1-94f5-5d57d5feb7dc)
+
+3. 각 메뉴바에 알맞은 기능 넣기
+
+- 메뉴를 클릭하면 "여기에 입역하십시오." 라고 문구가 써져있는 곳에 기능 이름을 삽입한다.
+※ 주의사항 : 기능 이름을 삽입하는 곳은 한글이 사용되지 않으므로 메모장에 적어서 복사 붙여넣기를 해야한다.
+
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/244b3e99-2c30-44d0-89d6-bd0605d93dd5)
+
+4. 기능 단축키 설정
+
+- 메뉴의 기능을 클릭하고 오른쪽 목록에 shortcut를 이용하여 단축키를 설정한다.
+
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/fceba154-b428-4e04-b779-724a195254e5)
+
+5. 폼 완성
+- 폼 - 미리보기를 통해 폼을 확인할 수 있다.
+
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/9d0b5b30-0861-48e1-942b-e30bec8821b4)
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/0913bbcf-eeae-4938-b18c-8b9fc39dffc9)
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/39215a1c-2be4-466e-93f0-36588d0e7b44)
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/29b934d5-8a55-44ca-ac2a-818c61562ec1)
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/b59f5527-5d72-44a5-b585-ecdbbdedbc48)
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/a64f4d94-07f1-4fe7-a570-6ae2ce30de40)
+
+### Python code
+
+실행 코드에서 필요한 모듈
 ```python
-import sys
-from PyQt5.QtWidgets import *
-from PyQt5 import uic
-// 디자이너에 사용되는 위젯에 모든 라이브러리를 가져온다.
-// ui파일을 클래스 파일로 사용할 수 있게 해주는 라이브러를 uic도 가져온다.
-
-
-form_class = uic.loadUiType("C:\\Users\\MOA\\Desktop\\QtDesigner\\파이큐티\\파이큐티 두번째 - 메모장\\memo.ui")[0]
-// ui 파일 경로를 가져와서 uic.loadUiType 함수에 넣게 되면 ui파일을 클래스 파일로 사용할 수 있게된다.
-class WindowClass(QMainWindow, form_class):
-    def __init__(self):
-// init에 self에는 인스턴스 자체가 전달되어 있어 메소드 내에 인스턴스 변수 작성, 참고가 가능해진다.
-        super().__init__()
-// 부모클래스를 상속시킨다.
-        self.setupUi(self)
-// 연결한 ui파일을 준비한다.
-        
-app = QApplication(sys.argv)
-// pyqt를 실행한다.
-mainWindow = WindowClass()
-mainWindow.show()
-app.exec_()
+import sys # 파이썬 인터프리터를 제어
+from PyQt5.QtWidgets import * # PyQt5의 Widget을 사용
+from PyQt5 import uic # PyQt5 확장자 ui를 python에서 로드
 ```
-### 2. PyQt5 메모장 - 메뉴바 만들기
-- QT 디자이너
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/167f672b-0e13-4433-9091-7b1c0e982891)
-
-이전에 만들었던 폼에서 "여기에 입력하십시오"라는 문구가 적힌 곳에 메뉴를 입력한다.
-
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/faea95a6-c25f-4684-8a19-9eb63c08c0cc)
-
-그리고 파일을 누르면 똑같이 "여기에 입력하십시오"라는 문구가 적힌 곳이 있는데 그곳에는 기능들을 입력하는 곳이다.
-
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/4c32e2f3-ae64-45cc-9d26-71dccf5ec294)
-
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/7a348af9-2728-4ca2-925f-b86bcce2e164)
-
-오른 쪽 목록에서 shortcut 속성을 이용해서 메뉴바에 기능의 단축키를 넣을 수 있다.
-
-![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/28b79b1b-6470-4ca9-9718-18925a5d9013)
-
-
-
-- 파이썬 
-### 3. PyQt5 메모장 - 열기, 저장 기능 만들기 
-- QT 디자이너
-
-- 파이썬 
-### 4. PyQt5 메모장 - 다른 이름으로 저장 기능 만들기
-- QT 디자이너
-
-- 파이썬 
-### 5. PyQt5 메모장 - 클로즈 이벤트 만들기
-- QT 디자이너
-
-- 파이썬 
-### 6. PyQt5 메모장 - 메시지 박스 띄우기 만들기
-- QT 디자이너
-
-- 파이썬 
