@@ -5,6 +5,11 @@
 
 ## 메모장 파일 저장하기
 ### 실행화면
+![image](https://github.com/hsy0511/PyQt5-memo/assets/104752580/dab3d164-16e4-4872-961f-d332af689a41)
+
+
+https://github.com/hsy0511/PyQt5-memo/assets/104752580/43d5f0ad-c1ac-4d69-b4ea-49d3fe7b76f1
+
 
 ### PyQt 
 1. 레이아웃 만들기
