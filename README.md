@@ -274,7 +274,7 @@ self.opened_file_path = '제목 없음' # 열려져있는 파일이 아닐 때 �
                 event.ignore()
 ```
 
-- save_file 함수
+- save_file 함수 (파일 저장)
 
 ```python
     def save_file(self,fname):
@@ -293,7 +293,7 @@ self.opened_file_path = '제목 없음' # 열려져있는 파일이 아닐 때 �
         print("save {}!!".format(fname))
 ```
 
-- open_file 함수
+- open_file 함수 (파일 열기)
 
 ```python
     def open_file(self,fname):
